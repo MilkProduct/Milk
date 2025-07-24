@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MilkMart 🥛</title>
+  <style>
+    * { 
+        margin:0; 
+        padding:0;
+         box-sizing:border-box; 
+         font-family:'Segoe UI', sans-serif; 
+        }
+    body {
+         background:#f8f9fa;
+          color:#333;
+          background-image: url(bg.jpeg);
+          background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+         }
+    .header { 
+        display:flex;
+         align-items:center;
+          justify-content:space-between; 
+              padding:16px 32px;
+               background:#fff;
+                box-shadow:0 2px 10px rgba(0,0,0,0.05);
+                 flex-wrap:wrap;
+                 }
+    .logo {
+         font-size:1.8rem;
+          font-weight:700; 
+          color:#2c2c2c;
+         }
+    .nav-links { 
+        display:flex;
+         gap:24px;
+          flex-wrap:wrap; 
+        }
+    .nav-links a { 
+        text-decoration:none; 
+        color:#555; 
+        font-weight:500; 
+        transition:color .2s;
+     }
+    .nav-links a:hover { 
+        color:#007aff;
+     }
+    .btn {
+         padding:10px 20px; 
+         border:none;
+          border-radius:25px;
+           cursor:pointer; 
+           font-size:1rem;
+         }
+    .btn.primary { 
+        background:#007aff;
+         color:#fff;
+         }
+    .btn.secondary {
+         background:transparent; 
+         color:#007aff;
+          border:2px solid #007aff;
+         }
+    .hero {
+         position:relative; height:80vh;
+          display:flex; 
+          align-items:center;
+           justify-content:center;
+         }
+   .hero-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    .hero-text h1 { 
+        font-size:2.5rem; 
+        margin-bottom:16px; 
+    }
+    .hero-text p {
+         font-size:1.2rem;
+          margin-bottom:24px;
+         }
+         .about {
+  background-color:#333(255, 255, 255, 0.9);
+  padding: 60px 20px;
+  color: #333;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007aff;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.govt-section {
+  padding: 50px 20px;
+  color: #1a1a1a;
+}
+
+.govt-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.govt-container h2 {
+  color: #007aff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.govt-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.govt-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.govt-container ul li {
+  font-size: 1rem;
+  margin: 6px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.govt-container ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  color: #e67300;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    .features { 
+        display:grid;
+         grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+          gap:20px; 
+          padding:60px 32px;
+           background:rgba(0,0,0,0.5); }
+    .feature {
+         text-align:center;
+         color: #f8f9fa;
+          padding:20px; }
+    .feature img { 
+        max-width:80px;
+         margin-bottom:12px; }
+    .feature h3 { 
+        font-size:1.2rem;
+         margin-bottom:8px; }
+    
+    footer {
+          color:black;
+           padding:40px 32px; 
+           text-align:center;
+         }
+        hr {
+  border-top: 1px solid #ccc;
+  position: relative;
+  left: -20px;
+  width: calc(100% + 40px);
+}
+
+    footer .social-links a { 
+        color:#fff; 
+        margin:0 8px; 
+        font-size:1.2rem;
+         text-decoration:none; 
+        }
+        .social-links img{
+width:40px;
+margin: 20px;
+        }
+        .product-logo img{
+            border-radius: 90px;
+            height: 100px;
+        }
+    footer .social-links a:hover { 
+        text-decoration:underline; 
+    }
+    .detail {
+  padding: 10px 32px;
+  text-align: center;
+}
+.detail h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.detail p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+    @media (min-width:37.5em){
+       .hero h1 { font-size: 2.2rem; }
+  .features { grid-template-columns: repeat(2,1fr); }
+  .item-listing { grid-template-columns: repeat(3,1fr); }
+    }
+    @media (min-width: 48em) {
+  .header { padding: 20px 32px; }
+  .nav-links { gap: 24px; }
+  .hero { padding: 80px 20px; }
+  .hero h1 { font-size: 2.5rem; }
+  .features { grid-template-columns: repeat(3,1fr); }
+  .item-listing { grid-template-columns: repeat(4,1fr); }
+}
+
+@media (min-width: 64em) {
+  body { padding: 0 60px; }
+  .hero h1 { font-size: 3rem; }
+  .features { padding: 60px 0; }
+  .item-card img { height: 140px; }
+}
+
+@media (min-width: 75em) {
+  .item-listing{grid-template-columns:repeat(5,1fr);}
+}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">MilkMart 🥛</div>
+    <nav class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#subscription">Subscription</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="btn primary">Shop Now</button>
+  </header>
+
+  <section class="hero slide-up">
+    <div class="hero-text">
+      <h1>Milk_Mart Milk Delivered Daily</h1>
+      <p>Organic, A2 milk sourced from trusted farms.</p>
+      <div>
+        <button class="btn primary">Shop Now</button>
+        <button class="btn secondary">Learn More</button>
+      </div>
+    </div>
+  </section>
+  <section class="detail slide-up">
+    <h1>MilkMart History</h1>
+    <h1>Quality</h1>
+  </section>
+  <section class="about slide-up" id="about">
+  <div class="about-container">
+    <h2>About MilkMart 🐄</h2>
+    <p>
+      At <strong>MilkMart</strong>, we are committed to delivering fresh, organic, and nutritious milk straight from our trusted farms to your doorstep. With over a decade of experience in the dairy industry, our mission is to provide families with safe, high-quality, and chemical-free dairy products.
+    </p>
+    <p>
+      Our milk is sourced from carefully selected indigenous cows that are raised in a stress-free and cruelty-free environment. We use no hormones, antibiotics, or additives—only pure, unprocessed A2 milk that is rich in nutrients, easy to digest, and delivered chilled every morning.
+    </p>
+    <p>
+      From farm hygiene to doorstep delivery, every step is monitored and tested to ensure <strong>purity, freshness, and health</strong>. Choose MilkMart for a healthier tomorrow.
+    </p>
+  </div>
+</section>
+<section class="govt-india slide-up" id="govt-india">
+  <div class="govt-container">
+    <h2>🇮🇳 Government Milk Products Across India</h2>
+    <p>
+      <strong>MilkMart</strong> is a proud promoter of <strong>government-certified dairy brands from across India</strong>. We bring you a carefully curated collection of milk and milk-based products directly sourced from public sector dairies.
+    </p>
+    <p>
+      Our offerings include products from well-known and trusted cooperative brands such as:
+    </p>
+    <ul>
+      <li><strong>Aavin</strong> – Tamil Nadu</li>
+      <li><strong>Nandini</strong> – Karnataka</li>
+      <li><strong>Milma</strong> – Kerala</li>
+      <li><strong>Amul</strong> – Gujarat (GCMMF – Government Cooperative)</li>
+      <li><strong>Mother Dairy</strong> – Delhi NCR (Government of India)</li>
+      <li><strong>Verka</strong> – Punjab</li>
+      <li><strong>Saras</strong> – Rajasthan</li>
+      <li><strong>Vijaya</strong> – Andhra Pradesh & Telangana</li>
+    </ul>
+    <p>
+      All these brands are regulated by the <strong>FSSAI</strong> and operate under state or central government cooperative systems, ensuring <strong>quality, safety, and affordability</strong>.
+    </p>
+  </div>
+</section>
+
+
+
+
+  <section class="features slide-up">
+    <div class="feature">
+      <img src="https://img.icons8.com/ios/100/checkmark--v1.png" alt="Quality">
+      <h3>100% A2 Milk</h3>
+      <p>Pure, easy to digest.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/ios/100/marker-pen.png" alt="Traceability">
+      <h3>Farm-to-Cart</h3>
+      <p>Transparent sourcing.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/ios/100/snowflake.png" alt="Freshness">
+      <h3>Chilled Delivery</h3>
+      <p>Always fresh and cold.</p>
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="product-logo slide-up">
+        <img src="milklogo.png">
+    </div>
+    <hr>
+    <div class="address">
+        <address>
+            MilkMart Company In the Main Branch In The Tamil
+        </address>
+    </div>
+    <div class="social-links slide-up">
+      <a href="#" ><img src="fb.png"></a>
+      <a href="#" ><img src="inst.png"></a>
+      <a href="#"><img src="twitter.png"></a>
+      <p>&copy; 2025 PureFarm Dairy. All rights reserved.</p>
+    </div>
+  </footer>
+<script>
+  const slideElements = document.querySelectorAll(".slide-up");
+
+  const slideObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        slideObserver.unobserve(entry.target); // Optional: remove once shown
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  slideElements.forEach(el => {
+    slideObserver.observe(el);
+  });
+</script>
+
+</body>
+</html>
