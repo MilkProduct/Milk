@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Instant Service</title>
+  <link rel="stylesheet" href="instant.css" />
+</head>
+<body>
+  <!-- Step 1: Location -->
+  <section id="step-1">
+    <h2>Enter Your Location</h2>
+    <input type="text" placeholder="Search your location" class="location-input" />
+    <button onclick="nextStep()">Next</button>
+  </section>
+
+  <!-- Step 2: Brand -->
+  <section id="step-2" class="hidden">
+    <h2>Select a Brand</h2>
+    <div class="brands">
+      <div class="brand-item" onclick="selectBrand(this)">
+        <div class="brand-circle"><img src="ch.png" alt="Aavin" /></div>
+        <p class="brand-name">Aavin</p>
+      </div>
+      <div class="brand-item" onclick="selectBrand(this)">
+        <div class="brand-circle"><img src="kerala.png" alt="Kerala" /></div>
+        <p class="brand-name">Kerala</p>
+      </div>
+    </div>
+    <p id="selected-brand"></p>
+  </section>
+
+  <!-- Step 3: Category -->
+  <section id="step-3" class="hidden">
+    <h2>Select Category</h2>
+    <div class="categories">
+      <div class="category-box" onclick="selectCategory(this)">Milk</div>
+      <div class="category-box" onclick="selectCategory(this)">Curd</div>
+      <div class="category-box" onclick="selectCategory(this)">Ghee</div>
+    </div>
+    <p id="selected-category"></p>
+  </section>
+
+  <!-- Step 4: Quantity -->
+  <section id="step-4" class="hidden">
+    <h2>Select Quantity</h2>
+    <select class="quantity-dropdown" onchange="selectQuantity(this)">
+      <option value="">--Choose--</option>
+      <option>250 ml</option>
+      <option>500 ml</option>
+      <option>1 Litre</option>
+    </select>
+    <p id="selected-quantity"></p>
+  </section>
+
+  <!-- Step 5: Delivery Time -->
+  <section id="step-5" class="hidden">
+    <h2>Select Delivery Time</h2>
+    <input type="time" class="delivery-time-input" onchange="selectTime(this)" />
+    <p id="selected-time"></p>
+  </section>
+
+  <!-- Step 6: Offer -->
+  <section id="step-6" class="hidden">
+    <h2>Apply Offer Coupon</h2>
+    <input type="text" placeholder="Enter coupon code" class="coupon-input" />
+    <button class="apply-btn" onclick="applyCoupon()">Apply</button>
+    <p id="selected-coupon"></p>
+  </section>
+
+  <section id="summary" class="hidden">
+    <h2>🧾 Order Summary</h2>
+    <ul class="summary-list">
+      <li id="summary-brand">Brand: </li>
+      <li id="summary-category">Category: </li>
+      <li id="summary-quantity">Quantity: </li>
+      <li id="summary-time">Delivery Time: </li>
+      <li id="summary-coupon">Coupon: </li>
+    </ul>
+  </section>
+
+  <script src="instant.js"></script>
+</body>
+</html>
