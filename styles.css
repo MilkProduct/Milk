@@ -208,16 +208,26 @@ body::before {
   0%, 100% { opacity: 0.5; }
   50% { opacity: 1; }
 }
-
-#welcomeMessage {
+.popup {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #4caf50;
   color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
+  padding: 16px 28px;
+  border-radius: 10px;
   font-size: 18px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  z-index: 9999;
   display: none;
+  animation: fadeInOut 4s ease-in-out forwards;
 }
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+

@@ -93,6 +93,15 @@ function verifyOTP() {
     setTimeout(() => {
       welcomeDiv.style.display = "none";
     }, 3000);
+
+    // Show popup
+    const popup = document.getElementById("popupMsg");
+    popup.style.display = "block";
+
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 4000);
+
   } else {
     alert("Invalid OTP. Please try again.");
   }
