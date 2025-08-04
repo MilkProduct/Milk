@@ -72,3 +72,28 @@ function sendOTP() {
   startTimer();
 }
 
+function verifyOTP() {
+  const otp = document.getElementById("otp").value;
+
+  if (otp === "123456") {
+    let username = "";
+    const phoneSection = document.getElementById("phone-section");
+    const emailSection = document.getElementById("email-section");
+
+    if (!phoneSection.classList.contains("hidden")) {
+      username = document.getElementById("phone").value;
+    } else {
+      username = document.getElementById("email").value;
+    }
+
+    document.getElementById("username").textContent = username;
+    const welcomeDiv = document.getElementById("welcomeMessage");
+    welcomeDiv.style.display = "block";
+
+    setTimeout(() => {
+      welcomeDiv.style.display = "none";
+    }, 3000);
+  } else {
+    alert("Invalid OTP. Please try again.");
+  }
+}
