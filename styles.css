@@ -208,3 +208,16 @@ body::before {
   0%, 100% { opacity: 0.5; }
   50% { opacity: 1; }
 }
+
+#welcomeMessage {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: none;
+}
