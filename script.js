@@ -86,23 +86,23 @@ function verifyOTP() {
       username = document.getElementById("email").value;
     }
 
+    // Update username in the popup
     document.getElementById("username").textContent = username;
-    const welcomeDiv = document.getElementById("welcomeMessage");
-    welcomeDiv.style.display = "block";
-
-    setTimeout(() => {
-      welcomeDiv.style.display = "none";
-    }, 3000);
 
     // Show popup
     const popup = document.getElementById("popupMsg");
-    popup.style.display = "block";
+    popup.classList.remove("hidden");
+    popup.classList.remove("show"); // Reset if already shown
+    void popup.offsetWidth;         // Force reflow for animation restart
+    popup.classList.add("show");
 
+    // Hide after 4 seconds
     setTimeout(() => {
-      popup.style.display = "none";
+      popup.classList.remove("show");
     }, 4000);
 
   } else {
     alert("Invalid OTP. Please try again.");
   }
 }
+
